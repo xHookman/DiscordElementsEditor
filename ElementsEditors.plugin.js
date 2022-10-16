@@ -26,13 +26,6 @@ module.exports = class ElementsEditor {
 	BdApi.onRemoved(btnDesignMode, () => {
     		topBar.append(btnDesignMode);
 	});
-
-	BdApi.injectCSS("ElementsEditor", `.btnDesignMode {
-    padding: 4px;
-    border-radius: 5px;
-    background: black;
-    color: black;
-}`);
     }
     stop() {
       // Called when the plugin is deactivated
