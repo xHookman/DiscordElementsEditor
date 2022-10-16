@@ -19,11 +19,20 @@ module.exports = class ElementsEditor {
 		}
 		BdApi.showToast("Editing mode : " + document.designMode);
 	});
-	document.querySelector(".toolbar-3_r2xA").append(btnDesignMode);
+	topBar = document.querySelector(".toolbar-3_r2xA");
+	topBar.append(btnDesignMode);
+
 	// This part re-adds it when removed
 	BdApi.onRemoved(btnDesignMode, () => {
     		topBar.append(btnDesignMode);
 	});
+
+	BdApi.injectCSS("ElementsEditor", `.btnDesignMode {
+    padding: 4px;
+    border-radius: 5px;
+    background: black;
+    color: black;
+}`);
     }
     stop() {
       // Called when the plugin is deactivated
